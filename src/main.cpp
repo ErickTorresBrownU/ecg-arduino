@@ -129,8 +129,6 @@ void setup()
 
     updateLeadPlacementMessage();
     updateConnectionMessage();
-
-    randomSeed(analogRead(0));
 }
 
 void loop()
@@ -190,10 +188,6 @@ void loop()
     }
 
     Serial.println("(" + String(millis()) + " " + String(analogRead(A0)) + ")");
-
-    // This takes 31/32 milliseconds to carry out and seems to make the code run better
-    // TODO try experimenting with making the delay of 1 maybe (1 + 32)
-    // writeToLcd(String(random(100)), 3);
 
     // Wait for a bit to keep serial data from saturating
     delay(20);
